@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Bài tập 1:</h2>
+<b>Nhập điểm môn Vật lý:</b><br>
+<input type="text" id="diem_ly"><br>
+<b>Nhập điểm môn Hóa học:</b><br>
+<input type="text" id="diem_hoa"><br>
+<b>Nhập điểm môn Sinh học:</b><br>
+<input type="text" id="diem_sinh"><br>
+<!--<button onclick="diemTB()">Điểm trung bình</button>-->
+<!--<button onclick="diemtong()">Tổng</button>-->
+<button onclick="tinh_toan()">Tính toán</button>
+<script>
+// function diemTB() {
+//     let a=+document.getElementById("diem_ly").value;
+//     let b=+document.getElementById("diem_hoa").value;
+//     let c=+document.getElementById("diem_sinh").value;
+//     let avg= (a+b+c)/3;
+//     avg = avg.toFixed(2)
+//     alert("Điểm trung bình 3 môn: "+ avg);
+// }
+// function diemtong() {
+//     let a=+document.getElementById("diem_ly").value;
+//     let b=+document.getElementById("diem_hoa").value;
+//     let c=+document.getElementById("diem_sinh").value;
+//     let sum= a+b+c;
+//     alert(sum);
+// }
+function tinh_toan() {
+    let a=+document.getElementById("diem_ly").value;
+    let b=+document.getElementById("diem_hoa").value;
+    let c=+document.getElementById("diem_sinh").value;
+    let avg= (a+b+c)/3;
+    avg = avg.toFixed(2);
+    let sum= a+b+c;
+    alert("Điểm trung bình 3 môn: "+ avg+"\n Điểm tổng 3 môn: "+sum);
+    // alert("\n Điểm tổng 3 môn: "+sum);
+}
+</script>
+<hr>
+<h2>Bài tập 2:</h2>
+<b>Độ 0C (Celsius):</b><br>
+<input type="text" id="do_C">
+<br>
+<b>Độ 0F (Fahrenheit):</b>
+<br>
+<input type="text" id="do_F" readonly>
+<br>
+<button onclick="chuyen_doi()">Chuyển</button>
+<script>
+    function chuyen_doi() {
+        let a=+document.getElementById("do_C").value;
+        let b;
+        b= ((9*a)/5+32);
+        // alert("Độ 0F (Fahrenheit): "+b);
+        document.getElementById("do_F").value= b;
+    }
+</script>
+<hr>
+<h2>Bài tập 3:</h2>
+<b>Bán kính:</b>
+<br>
+<input type="text" id="ban_kinh">
+<br>
+<b>Diện tích hình tròn:</b>
+<br>
+<input type="text" id="hinh_tron"  readonly>
+<br>
+<button onclick="tinh_dientich()">Tính</button>
+<script>
+    function tinh_dientich() {
+        let a=document.getElementById("ban_kinh").value;
+        const Pi = 3.14;
+        let dientich;
+        dientich= (Pi*a*a);
+        document.getElementById("hinh_tron").value= dientich;
+    }
+</script>
+<hr>
+<h2>Bài tập 4:</h2>
+<b>Bán kính:</b>
+<br>
+<input type="text" id="ban_kinh1">
+<br>
+<b>Chu vi hình tròn:</b>
+<br>
+<input type="text" id="hinh_tron1" readonly>
+<br>
+<button onclick="tinh_chuvi()">Tính</button>
+<script>
+    function tinh_chuvi() {
+        let a=document.getElementById("ban_kinh1").value;
+        const Pi = 3.14;
+        let chuvi;
+        chuvi= (2*Pi*a);
+        document.getElementById("hinh_tron1").value= chuvi;
+    }
+</script>
+</body>
+</html>

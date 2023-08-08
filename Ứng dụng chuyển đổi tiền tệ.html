@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        th{
+            padding: 10px;
+        }
+        .click{
+            background: lightblue;
+        }
+    </style>
 </head>
 <body>
-<table >
+<table  >
     <tr>
         <th>Amount</th>
-        <th>From Currency</th>
+        <th >From Currency</th>
         <th>To Currency</th>
         <th></th>
     </tr>
@@ -27,7 +35,7 @@
                 <option>VND</option>
             </select>
         </th>
-        <th><button onclick="chuyen_doi()">Convert</button></th>
+        <th><button class ="click" onclick="chuyen_doi()">Convert</button></th>
     </tr>
 </table>
 <p id="d">Result:</p>
@@ -39,7 +47,7 @@ function chuyen_doi() {
     let Result;
 
     if(FromC == "Mỹ" && To == "VND") {
-        Result ="Result" + (Amount * 23000) + "Đ";
+        Result ="Result: " + (Amount * 23000) + "Đ";
     }
     else if (FromC == "Việt Nam" && To =="USD"){
         Result = "Result: " + (Amount / 23000) + "$";

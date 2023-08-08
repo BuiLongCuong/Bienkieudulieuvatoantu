@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table >
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+        <th></th>
+    </tr>
+    <tr>
+        <th><input type="text" id="a"></th>
+        <th>
+            <select id="b">
+                <option>Việt Nam</option>
+                <option>Mỹ</option>
+
+            </select>
+        </th>
+        <th>
+            <select id="c">
+                <option>USD</option>
+                <option>VND</option>
+            </select>
+        </th>
+        <th><button onclick="chuyen_doi()">Convert</button></th>
+    </tr>
+</table>
+<p id="d">Result:</p>
+<script>
+function chuyen_doi() {
+    let Amount=document.getElementById("a").value;
+    let FromC=document.getElementById("b").value;
+    let To=document.getElementById("c").value;
+    let Result;
+
+    if(FromC == "Mỹ" && To == "VND") {
+        Result ="Result" + (Amount * 23000) + "Đ";
+    }
+    else if (FromC == "Việt Nam" && To =="USD"){
+        Result = "Result: " + (Amount / 23000) + "$";
+    }
+    else if (FromC == "Việt Nam"){
+        Result = "Result: " + Amount + "Đ";
+    }
+    else {
+        Result ="Result: " + Amount +"$";
+    }
+    document.getElementById("d").innerHTML= Result;
+}
+</script>
+</body>
+</html>

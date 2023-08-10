@@ -16,23 +16,26 @@
 <table  >
     <tr>
         <th>Amount</th>
-        <th >From Currency</th>
+        <th>From Currency</th>
         <th>To Currency</th>
         <th></th>
     </tr>
     <tr>
         <th><input type="text" id="a"></th>
         <th>
-            <select id="b">
-                <option>Việt Nam</option>
-                <option>Mỹ</option>
-
+            <select id="b" onchange="don_vi()">
+                <option >Việt Nam</option>
+                <option >Mỹ</option>
+<!--                <option value="VND">Việt Nam</option>-->
+<!--                <option value="USD">Mỹ</option>-->
             </select>
         </th>
         <th>
-            <select id="c">
-                <option>USD</option>
-                <option>VND</option>
+            <select id="c" onchange="don_vi()">
+                <option >USD</option>
+                <option >VND</option>
+<!--                <option value="VND">Việt Nam</option>-->
+<!--                <option value="USD">Mỹ</option>-->
             </select>
         </th>
         <th><button class ="click" onclick="chuyen_doi()">Convert</button></th>
@@ -41,25 +44,34 @@
 <p id="d">Result:</p>
 <script>
 function chuyen_doi() {
-    let Amount=document.getElementById("a").value;
-    let FromC=document.getElementById("b").value;
-    let To=document.getElementById("c").value;
-    let Result;
-
-    if(FromC == "Mỹ" && To == "VND") {
-        Result ="Result: " + (Amount * 23000) + "Đ";
-    }
-    else if (FromC == "Việt Nam" && To =="USD"){
-        Result = "Result: " + (Amount / 23000) + "$";
-    }
-    else if (FromC == "Việt Nam"){
-        Result = "Result: " + Amount + "Đ";
-    }
-    else {
-        Result ="Result: " + Amount +"$";
-    }
-    document.getElementById("d").innerHTML= Result;
+   let Amount=document.getElementById("a").value;
+   let FromC=document.getElementById("b").value;
+   let To=document.getElementById("c").value;
+   let Result;
+   Result =0 ;
+   if (FromC =="Mỹ" && To =="VND"){
+       Result ="Result: "+ (Amount*23000) +"Đ";
+   }else if (FromC =="Việt Nam" && To =="USD"){
+       Result ="Result: " + (Amount/23000) +"$";
+   } else if (FromC=="Việt Nam") {
+       Result ="Result: " + Amount + "Đ";
+   } else {
+       Result ="Result: " + Amount + "$";
+   }
+    document.getElementById("d").innerHTML= Result ;
 }
+
+//     function don_vi() {
+//         let Amount = document.getElementById("a").value;
+//         let FromC = document.getElementById("b").value;
+//         let To = document.getElementById("c").value;
+//         let Result;
+//
+//         if( FromC =="VND"){
+//             document.getElementById("c").value="USD"
+//         }else
+//             document.getElementById("c").value="VND"
+//     }
 </script>
 </body>
 </html>
